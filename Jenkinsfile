@@ -1,11 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        // 필요하다면 Python 환경 경로 설정
-        PYTHONPATH = env.WORKSPACE
-    }
-
     stages {
         stage('Checkout') {
             steps {
@@ -39,7 +34,7 @@ pipeline {
 
     post {
         always {
-            // JUnit 테스트 결과 보고서 Jenkins에 게시 (Post-build 설정 자동화)
+            // JUnit 테스트 결과 보고서 Jenkins에 게시
             junit 'pytest-report.xml'
         }
         success {
