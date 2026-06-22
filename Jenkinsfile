@@ -1,10 +1,10 @@
 pipeline {
     agent any
 
-    environment {
+    //environment {
         // 필요하다면 Python 환경 경로 설정
         //PYTHONPATH = env.WORKSPACE
-    }
+    //}
 
     stages {
         stage('Checkout') {
